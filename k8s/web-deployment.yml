@@ -22,7 +22,7 @@ spec:
         - containerPort: 80
         env:
         - name: DB_HOST
-          value: mariadb-service
+          value: mysql-service
         - name: DB_USER
           value: ecomuser
         - name: DB_PASSWORD
@@ -34,7 +34,7 @@ spec:
             configMapKeyRef:
               name: feature-toggle-config
               key: FEATURE_DARK_MODE
-      volumecMounts:
+      volumeMounts:
       - name: theme-volume
         mountPath: /var/www/html/
       imagePullSecrets:
