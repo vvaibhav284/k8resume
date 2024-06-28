@@ -34,13 +34,13 @@ spec:
             configMapKeyRef:
               name: feature-toggle-config
               key: FEATURE_DARK_MODE
-      volumeMounts:
-      - name: theme-volume
-        mountPath: /var/www/html/
+        volumeMounts:
+        - name: theme-volume
+          mountPath: /var/www/html/
       imagePullSecrets:
       - name: acr-credentials
-    volumes:
-    - name: theme-volume
-      configMap:
-        name: feature-toggle-config
+      volumes:
+      - name: theme-volume
+        configMap:
+          name: feature-toggle-config
 
