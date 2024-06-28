@@ -6,7 +6,7 @@ metadata:
   labels:
     app: deployment-web
 spec:
-  replicas: 2
+  replicas: 6
   selector:
     matchLabels:
       app: deployment-web
@@ -29,5 +29,18 @@ spec:
           value: ecompassword
         - name: DB_NAME
           value: ecomdb
+        - name: FEATURE_DARK_MODE
+          valueFrom:
+            configMapKeyRef:
+              name: feature-toggle-config
+              key: FEATURE_DARK_MODE
+      volumecMounts:
+      - name: theme-volume
+        mountPath: /var/www/html/
       imagePullSecrets:
       - name: acr-credentials
+    volumes:
+    - name: theme-volume
+      configMap:
+        name: feature-toggle-config
+

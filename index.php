@@ -21,6 +21,12 @@
 
         <!-- Theme style CSS -->
         <link href="css/style.css" rel="stylesheet">
+        <?php
+            // Check if the dark mode feature is enabled
+            if (getenv('FEATURE_DARK_MODE')) {
+                echo '<link href="css/dark-theme.css" rel="stylesheet">';
+            }
+        ?>
 <!--        <link href="css/responsive.css" rel="stylesheet">  -->
 
         <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
