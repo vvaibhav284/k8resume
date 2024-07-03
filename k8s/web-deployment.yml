@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: deployment-web
-        image: acrk8s01.azurecr.io/web:v0.1.0
+        image: acrk8s01.azurecr.io/web:v0.2.1
         ports:
         - containerPort: 80
         env:
