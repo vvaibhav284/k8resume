@@ -34,18 +34,18 @@ spec:
           value: ecompassword
         - name: DB_NAME
           value: ecomdb
-        - name: FEATURE_DARK_MODE
-          valueFrom:
-            configMapKeyRef:
-              name: feature-toggle-config
-              key: FEATURE_DARK_MODE
-        volumeMounts:
-        - name: theme-volume
-          mountPath: /var/www/html/
+        # - name: FEATURE_DARK_MODE
+        #   valueFrom:
+        #     configMapKeyRef:
+        #       name: feature-toggle-config
+        #       key: FEATURE_DARK_MODE
+        # volumeMounts:
+        # - name: theme-volume
+        #   mountPath: /var/www/html/
       imagePullSecrets:
       - name: acr-credentials
-      volumes:
-      - name: theme-volume
-        configMap:
-          name: feature-toggle-config
+      # volumes:
+      # - name: theme-volume
+      #   configMap:
+      #     name: feature-toggle-config
 
